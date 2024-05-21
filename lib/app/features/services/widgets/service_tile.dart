@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:get/get.dart';
 import 'package:protinidhi/app/core/theme/colors.dart';
+import 'package:protinidhi/app/router/app_router.dart';
 
 class ServiceTile extends StatefulWidget {
   final String path;
@@ -139,7 +141,9 @@ class _ServiceTileState extends State<ServiceTile> {
                           backgroundColor: AppColors.primaryColor,
                           fixedSize: Size(mediaQuery.width * 0.95,
                               mediaQuery.height * 0.02)),
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(AppRoute.directOrderPage);
+                      },
                       child: Text(
                         "Request for Direct Order",
                         style: TextStyle(

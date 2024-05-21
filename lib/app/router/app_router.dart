@@ -7,6 +7,7 @@ import 'package:protinidhi/app/features/auth/pages/welcome_page.dart';
 import 'package:protinidhi/app/features/home/binding/home_binding.dart';
 import 'package:protinidhi/app/features/home/pages/home_page.dart';
 import 'package:protinidhi/app/features/root/root_page.dart';
+import 'package:protinidhi/app/features/services/pages/direct_order_page.dart';
 import 'package:protinidhi/app/features/services/pages/sevice_page.dart';
 
 class AppRoute {
@@ -16,6 +17,7 @@ class AppRoute {
   static String signInPage = '/signIn';
   static String otpPage = '/OTP';
   static String servicePage = '/service';
+  static String directOrderPage = '/directOrder';
 
   static final routes = [
     GetPage(
@@ -46,6 +48,10 @@ class AppRoute {
     GetPage(
       name: servicePage,
       page: () => const ServicePage(),
-    )
+    ),
+    GetPage(
+      name: directOrderPage,
+      page: () => const DirectOrderPage(),
+    ),
   ];
 }
