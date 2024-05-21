@@ -54,57 +54,62 @@ class ServicePage extends StatelessWidget {
             ],
           ),
         ),
-        body: Column(
-          children: [
-            SizedBox(
-              height: mediaQuery.height * 0.02,
-            ),
-            const ServiceTile(
-              name: "Gold / Diamond",
-              path: 'assets/images/diamond.png',
-            ),
-            const ServiceTile(
-              name: "Cloth Shopping",
-              path: 'assets/images/shirt.png',
-            ),
-            const ServiceTile(
-              name: "Electronic Items",
-              path: 'assets/images/electronics.png',
-            ),
-            const ServiceTile(
-              name: "Gift Items",
-              path: 'assets/images/gift.png',
-            ),
-            const ServiceTile(
-              name: "Cosmetics",
-              path: 'assets/images/cosmetics.png',
-            ),
-            const ServiceTile(
-              name: "Educational Item",
-              path: 'assets/images/education.png',
-            ),
-            const ServiceTile(
-              name: "Furniture Item",
-              path: 'assets/images/furniture.png',
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8.0, top: 8.0),
-              child: Center(
-                  child: InkWell(
-                onTap: () {},
-                child: Text(
-                  "More Service",
-                  style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      decorationColor: AppColors.primaryColor,
-                      decorationThickness: 2,
-                      color: AppColors.primaryColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 13 * scaleFactor),
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8.0 * scaleFactor),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: mediaQuery.height * 0.02,
                 ),
-              )),
+                const ServiceTile(
+                  name: "Gold / Diamond",
+                  path: 'assets/images/diamond.png',
+                ),
+                const ServiceTile(
+                  name: "Cloth Shopping",
+                  path: 'assets/images/shirt.png',
+                ),
+                const ServiceTile(
+                  name: "Electronic Items",
+                  path: 'assets/images/electronics.png',
+                ),
+                const ServiceTile(
+                  name: "Gift Items",
+                  path: 'assets/images/gift.png',
+                ),
+                const ServiceTile(
+                  name: "Cosmetics",
+                  path: 'assets/images/cosmetics.png',
+                ),
+                const ServiceTile(
+                  name: "Educational Item",
+                  path: 'assets/images/education.png',
+                ),
+                const ServiceTile(
+                  name: "Furniture Item",
+                  path: 'assets/images/furniture.png',
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: mediaQuery.height * 0.02),
+                  child: Center(
+                      child: InkWell(
+                    onTap: () {},
+                    child: Text(
+                      "More Service",
+                      style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          decorationColor: AppColors.primaryColor,
+                          decorationThickness: 2,
+                          color: AppColors.primaryColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13 * scaleFactor),
+                    ),
+                  )),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
