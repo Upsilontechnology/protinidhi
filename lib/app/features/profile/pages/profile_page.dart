@@ -47,7 +47,7 @@ class ProfilePage extends StatelessWidget {
         child: Column(
           children: [
             ListTile(
-              onTap: () {},
+              onTap: () => Get.toNamed(AppRoute.editProfilePage),
               leading: Image.asset(
                 "assets/images/person.png",
                 width: 23,
