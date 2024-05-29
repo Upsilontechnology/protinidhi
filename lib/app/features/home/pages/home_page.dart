@@ -10,6 +10,7 @@ import 'package:protinidhi/app/features/home/widgets/rencent_service.dart';
 import 'package:protinidhi/app/features/home/widgets/search_serve.dart';
 import 'package:protinidhi/app/features/home/widgets/service_icon.dart';
 import 'package:protinidhi/app/features/home/widgets/services_list.dart';
+import 'package:protinidhi/app/router/app_router.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
@@ -24,7 +25,7 @@ class HomePage extends GetView<HomeController> {
         resizeToAvoidBottomInset: false,
         extendBody: true,
         appBar: PreferredSize(
-            preferredSize: Size(0, mediaQuery.height * 0.06),
+            preferredSize: Size(0, mediaQuery.height * 0.07),
             child: Obx(
               () => AppBar(
                 backgroundColor: AppColors.primaryColor,
@@ -35,6 +36,11 @@ class HomePage extends GetView<HomeController> {
                       ? Radius.zero
                       : Radius.circular(10 * scaleFactor),
                 )),
+                leading: GestureDetector(
+                    onTap: () {
+                      Get.toNamed(AppRoute.profilePage);
+                    },
+                    child: Image.asset("assets/images/profile.png")),
                 title: Padding(
                   padding: EdgeInsets.only(top: 8.0 * scaleFactor),
                   child: Image.asset(

@@ -40,7 +40,7 @@ class _SignupPageState extends State<SignupPage> {
         automaticallyImplyLeading: false,
         leading: IconButton(
             onPressed: () {
-              Get.back();
+              Get.offNamed(AppRoute.signInPage);
             },
             icon: Icon(
               Icons.arrow_back_sharp,

@@ -39,6 +39,8 @@ dependencies:
   flutter_native_splash: ^2.3.11
   pinput: ^4.0.0
   flutter_vector_icons: ^2.0.0
+  easy_stepper: ^0.8.5
+  timelines: ^0.1.0
 
 dev_dependencies:
   flutter_test:

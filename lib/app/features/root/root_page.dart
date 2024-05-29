@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:get/get.dart';
 import 'package:protinidhi/app/core/theme/colors.dart';
 import 'package:protinidhi/app/features/home/pages/home_page.dart';
+import 'package:protinidhi/app/features/order/pages/order_page.dart';
+import 'package:protinidhi/app/features/root/root_controller.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({super.key});
@@ -11,13 +14,15 @@ class RootPage extends StatefulWidget {
 }
 
 class _RootPageState extends State<RootPage> {
-  int initialIndex = 0;
+  // int initialIndex = 0;
 
-  void changePage({required int value}) {
-    setState(() {
-      initialIndex = value;
-    });
-  }
+  // void changePage({required int value}) {
+  //   setState(() {
+  //     initialIndex = value;
+  //   });
+  // }
+
+  final controller = Get.put(RootController());
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +30,13 @@ class _RootPageState extends State<RootPage> {
     final scaleFactor = mediaQuery.width / 360;
     bool keyboardIsOpened = MediaQuery.of(context).viewInsets.bottom != 0.0;
     return SafeArea(
-      child: Scaffold(
+        child: Obx(
+      () => Scaffold(
         extendBody: true,
-        body: navPagess[initialIndex],
+        body: [
+          const HomePage(),
+          const OrderPage(),
+        ][controller.navIndex.value],
         bottomNavigationBar: BottomAppBar(
           clipBehavior: Clip.antiAlias,
           notchMargin: 4,
@@ -44,14 +53,14 @@ class _RootPageState extends State<RootPage> {
                 padding: EdgeInsets.only(left: 25.0 * scaleFactor),
                 child: InkWell(
                   onTap: () {
-                    changePage(value: 0);
+                    controller.changePage(0);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
                         Octicons.home,
-                        color: initialIndex == 0
+                        color: controller.navIndex.value == 0
                             ? AppColors.primaryColor
                             : const Color.fromARGB(148, 0, 0, 0),
                         size: 20 * scaleFactor,
@@ -73,14 +82,14 @@ class _RootPageState extends State<RootPage> {
                 padding: EdgeInsets.only(right: 25.0 * scaleFactor),
                 child: InkWell(
                   onTap: () {
-                    changePage(value: 1);
+                    controller.changePage(1);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
                         Feather.shopping_cart,
-                        color: initialIndex == 1
+                        color: controller.navIndex.value == 1
                             ? AppColors.primaryColor
                             : const Color.fromARGB(148, 0, 0, 0),
                         size: 20 * scaleFactor,
@@ -114,11 +123,6 @@ class _RootPageState extends State<RootPage> {
                     onPressed: () {}),
               ),
       ),
-    );
+    ));
   }
 }
-
-const navPagess = <Widget>[
-  HomePage(),
-  HomePage(),
-];

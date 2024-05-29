@@ -12,14 +12,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          useMaterial3: true,
-          scaffoldBackgroundColor: Colors.white,
-          primaryColor: Colors.white),
-      initialRoute: AppRoute.welcomePage,
-      getPages: AppRoute.routes,
+    return SafeArea(
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+            useMaterial3: true,
+            appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
+            scaffoldBackgroundColor: Colors.white,
+            primaryColor: Colors.white),
+        initialRoute: AppRoute.welcomePage,
+        getPages: AppRoute.routes,
+      ),
     );
   }
 }
