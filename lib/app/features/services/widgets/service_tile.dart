@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:get/get.dart';
 import 'package:protinidhi/app/core/theme/colors.dart';
+import 'package:protinidhi/app/features/chat/chat_screen.dart';
 import 'package:protinidhi/app/router/app_router.dart';
 
 class ServiceTile extends StatefulWidget {
@@ -108,7 +109,9 @@ class _ServiceTileState extends State<ServiceTile> {
                       Padding(
                         padding: const EdgeInsets.only(left: 8.0),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Get.to(ChatScreen());
+                          },
                           child: Container(
                             width: mediaQuery.width * 0.41,
                             padding: const EdgeInsets.all(15),
