@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:protinidhi/app/features/chat/chat_screen.dart';
 import 'package:protinidhi/app/features/order/widgets/folded_order_tile.dart';
 
 class OrderPage extends StatelessWidget {
@@ -69,6 +71,9 @@ class OrderPage extends StatelessWidget {
               SizedBox(height: mediaQuery.height * 0.01),
               const FoldedOrderTile(name: "Gold Image"),
               SizedBox(height: mediaQuery.height * 0.2),
+              TextButton(onPressed: (){
+                Get.to(ChatScreen());
+              }, child: Text("chat text"))
             ],
           ),
         ),
