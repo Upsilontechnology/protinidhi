@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:protinidhi/app/features/chat/chat_screen.dart';
 import 'package:protinidhi/app/features/order/widgets/folded_order_tile.dart';
 
 class OrderPage extends StatelessWidget {

@@ -5,7 +5,6 @@ import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:image_picker/image_picker.dart';
 
 
-
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
 
@@ -18,6 +17,7 @@ class _ChatScreenState extends State<ChatScreen> {
   final _user =  types.User(
     id: '82091008-a484-4a89-ae75-a22bf8d6f3ac',
   );
+
   final TextEditingController _textController = TextEditingController();
 
   @override
